@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Pomodoro Timer</title>
+</head>
+
+<body class="red">
+
+    <header>
+        <img src="img/IMAGE.png" alt="main_logo">
+        <span class="app_name">Pomofocus</span>
+
+        <button id="report" class="header_button"><img class="button_icon" src="img/diagram.png" alt="diagram">Report</button>
+
+        <button id="setting" class="header_button"><img class="button_icon" src="img/gear.png" alt="gear">Setting</button>
+
+        <button class="header_button"><img class="button_icon" src="img/person.png" alt="person">Login</button>
+
+<!--        <div class="divider_stripe"></div>-->
+    </header>
+
+    <main>
+
+        <div class="pomodoro_block">
+            <div class="mode_buttons_container">
+                <button class="mode_button chosen_mode_button">Pomodoro</button>
+                <button class="mode_button">Short Break</button>
+                <button class="mode_button">Long Break</button>
+        </div>
+
+            <div class="timer">
+                <span class="minutes">12</span>:<span class="seconds">20</span>
+            </div>
+            <button class="start"><span class="start_caption red">START</span></button>
+
+        </div>
+
+
+
+        <!--<label>
+            <input name="minutes" type="number">min
+        </label>
+        <br>
+        <label>
+            <input name="seconds" type="number">sec
+        </label>
+        <br>
+        <button class="submit">submit</button>-->
+
+    </main>
+
+    <!--<div class="settings">
+
+    </div>-->
+
+    <div class="black_back hide_block">
+
+    </div>
+
+    <div class="settings_window hide_block">
+        <form action="#" id="settingsForm">
+            <div class="timer_setting">
+                <label>
+                    pomodoro <br>
+                    <input type="number" name="pomodoroTime" min="1" max="99" value="25">
+                </label>
+                <br>
+                <label>
+                    short break <br>
+                    <input type="number" name="sBreakTime" min="1" max="99" value="5">
+                </label>
+                <br>
+                <label>
+                    long break <br>
+                    <input type="number" name="lBreakTime" min="1" max="99" value="15">
+                </label>
+
+
+            </div>
+
+            <button type="submit">ок</button>
+
+
+        </form>
+    </div>
+
+
+    <div style="height: 6000px"></div>
+
+    <script src="js/script.js"></script>
+    
+</body>
+</html>

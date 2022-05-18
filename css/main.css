@@ -1,0 +1,213 @@
+
+* {
+    box-sizing: border-box;
+}
+button {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    /* отображаем курсор в виде руки при наведении; некоторые
+    считают, что необходимо оставлять стрелочный вид для кнопок */
+    cursor: pointer;
+}
+main, header {
+    width: 620px;
+    margin: 0 auto;
+    color: #FFFFFF;
+}
+body {
+    font-family: 'ArialRoundedMT', sans-serif;
+    font-weight: 700;
+    position: relative;
+}
+
+
+
+
+/*    header    */
+header {
+    padding-top: 16px;
+}
+.divider_stripe{
+    height: 2px;
+    background: rgba(0, 0, 0, 0.1);
+    margin-top: 14px;
+}
+
+.app_name {
+    /*font-family: 'Segoe UI', sans-serif;*/
+    /*font-style: normal;*/
+    /*font-weight: 400;*/
+    font-size: 20px;
+    line-height: 28px;
+    /* identical to box height, or 140% */
+
+}
+
+.header_button {
+    display: inline-block;
+    width: 85px;
+    height: 32px;
+    margin-left: 5px;
+    font-weight: 400;
+
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+.button_icon {
+    display: inline-block;
+    margin-right: 4px;
+}
+#report {
+    margin-left: 210px;
+}
+
+
+/*    main     */
+.pomodoro_block {
+    margin: 0 auto;
+    margin-top: 40px;
+    width: 480px;
+    height: 312px;
+    padding-top: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+}
+
+.mode_buttons_container {
+    display: flex;
+    justify-content: space-between;
+    /*width: 55%;*/
+    margin: 0 auto;
+    padding: 0 70px;
+}
+
+.mode_button {
+    color: #fff;
+    /*width: 100px;
+    height: 30px;*/
+    padding: 5px 10px;
+    /*font-family: 'Roboto';*/
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.pomodoro_block .timer{
+
+    /*font-family: 'Segoe UI', sans-serif;*/
+    font-size: 120px;
+    line-height: 160px;
+    /* identical to box height */
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+.chosen_mode_button{
+    width: 117px;
+    height: 28px;
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    font-weight: bold;
+}
+.start{
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    height: 55px;
+    border-radius: 4px;
+    box-shadow: 0px 6px 0px #EBEBEB;
+
+    background: #FFFFFF;
+
+}
+.stop {
+    box-shadow: none;
+    margin-top: 6px;
+
+}
+
+.start .start_caption {
+    /*font-family: 'Roboto';*/
+    font-weight: bold;
+    font-size: 22px;
+
+    text-align: center;
+}
+
+
+/*    js    */
+
+body.red {
+    background-color: #d95550;
+}
+body.green {
+    background-color: #4c9195;
+}
+
+body.blue{
+    background-color: #457ca3;
+}
+
+.start_caption.red{
+    color: #d95550;
+}
+.start_caption.blue{
+    color: #457ca3;
+}
+
+.start_caption.green{
+    color: #4c9195;
+}
+
+/*temp */
+
+.settings {
+    width: 360px;
+    height: 845px;
+    padding: 20px 20px 0 20px;
+    background-color: #FFFFFF;
+    position: fixed;
+    left: 200px;
+    bottom: 300px;
+}
+
+.settings_window {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    position: fixed;
+    width: 400px;
+    height: 400px;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    top: 300px;
+    z-index: 1;
+
+}
+
+.hide_block{
+    visibility: hidden;
+}
+
+.black_back {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 0;
+    opacity: 30%;
+}
+
+.timer_setting {
+    display: flex;
+    justify-content: space-between;
+}
+

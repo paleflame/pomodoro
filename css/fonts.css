@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'ArialRoundedMT';
+    src: url(../fonts/ArialRoundedMTBold.woff2) format('woff2');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'ArialRoundedMT';
+    src: url(../fonts/ArialRoundedMTRegular.woff2) format('woff2');
+    font-weight: 400;
+}
+

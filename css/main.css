@@ -29,11 +29,22 @@ body {
 /*    header    */
 header {
     padding-top: 16px;
+    position: relative;
 }
 .divider_stripe{
-    height: 2px;
+    position: relative;
+    height: 1px;
     background: rgba(0, 0, 0, 0.1);
     margin-top: 14px;
+}
+#progress {
+    position: absolute;
+    display: inline-block;
+    background-color: white;
+    border-radius: 2px;
+    width: 0;
+    height: 3px;
+    top: -1px;
 }
 
 .app_name {
@@ -48,9 +59,10 @@ header {
 
 .header_button {
     display: inline-block;
+    position: absolute;
+    right: 0;
     width: 85px;
     height: 32px;
-    margin-left: 5px;
     font-weight: 400;
 
     background: rgba(255, 255, 255, 0.2);

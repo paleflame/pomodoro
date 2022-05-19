@@ -9,12 +9,12 @@ window.addEventListener('DOMContentLoaded', ()=>{
         modeButtonContainer: document.querySelector(".mode_buttons_container"),
         minutes: document.querySelector(".minutes"),
         seconds: document.querySelector(".seconds"),
+        secondsAmount: +this.minutes * 60 + +this.seconds,
         startButton: document.querySelector(".start"),
         modeButtons: document.querySelectorAll(".mode_button"),
         startCaption: document.querySelector(".start_caption"),
-        body: document.querySelector("body")
-
-
+        body: document.querySelector("body"),
+        progressBar: document.querySelector("#progress"),
 
     }
     const isCheckboxOrRadio = (type) => ['checkbox', 'radio'].includes(type);
@@ -34,9 +34,8 @@ window.addEventListener('DOMContentLoaded', ()=>{
             }
 
         }
-        buttonActions.setTime();
-        console.log(formElements);
 
+        console.log(formElements);
 
 
     }
@@ -107,6 +106,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 
 
     function changeThemeColor(element, index){
+        buttonActions.setTime(index);
         element.classList.remove("red", "blue", "green");
         if (index === 0){
             element.classList.add("red");
@@ -120,13 +120,12 @@ window.addEventListener('DOMContentLoaded', ()=>{
 
 
     /*    time    */
-
-
     dE.startButton.addEventListener("click", startTimer);
-    const clickSound = new Audio('../audio/button-16.mp3');
+
 
     let timerInterval;
     function startTimer(){
+        const clickSound = new Audio('../audio/button-16.mp3');
 
         if (dE.startButton.classList.contains("stop")) {
             clearInterval(timerInterval);
@@ -134,14 +133,26 @@ window.addEventListener('DOMContentLoaded', ()=>{
             clickSound.currentTime = 0.0;
             clickSound.play();
         }else {
-            timerInterval = setInterval(setTime, 1000);
+            timerInterval = setInterval(()=>{
+                setTime();
+
+            }, 1000);
             clickSound.play();
         }
+
         buttonActions.toggleStartButtonCaption();
 
+        let currentProgress = 0;
+
+
         function setTime(){
+
             let sec = +dE.seconds.textContent,
                 min = +dE.minutes.textContent;
+
+
+            let step = 620 / (min * 60 + sec);
+
 
             if (sec > 0){
                 sec--;
@@ -154,6 +165,20 @@ window.addEventListener('DOMContentLoaded', ()=>{
                 dE.minutes.textContent = min;
                 dE.seconds.textContent = sec;
             }
+            else {
+                console.log(12);
+
+                const timerEnds = new Audio('../audio/ded-ya-futbolnyj-myachik.mp3');
+                timerEnds.play();
+                clearInterval(timerInterval);
+            }
+
+            currentProgress += step;
+            console.log(currentProgress);
+            growProgressBar(currentProgress);
+
+
+
         }
     }
 
@@ -165,6 +190,10 @@ window.addEventListener('DOMContentLoaded', ()=>{
     /* setting window */
     dE.settingButton.addEventListener("click",fun);
     dE.backBlack.addEventListener("click",fun);
+
+    function growProgressBar(len){
+        dE.progressBar.style.width = `${Math.floor(len)}px`;
+    }
 
     function fun(){
         dE.settingWindow.classList.toggle("hide_block");
